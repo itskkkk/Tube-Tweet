@@ -21,7 +21,7 @@ function App() {
     return(
       <div className='h-screen w-full overflow-y-auto dark:bg-black bg-white text-gray-500 dark:text-white'>
         <div className='flex flex-col items-center justify-center mt-64'>
-            <img src={loader} className='logo w-24' alt=" Loading..." />
+            {/* <img src={loader} className='logo w-24' alt=" Loading..." /> */}
             <h1 className='text-3xl text-center mt-8 font-semibold'>
               Loading....
             </h1>

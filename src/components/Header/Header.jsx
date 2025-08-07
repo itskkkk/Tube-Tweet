@@ -72,7 +72,7 @@ function Header() {
     <header className='sticky inset-x-0 top-0 z-50 w-full border-b border-white bg-[#121212] px-4'>
       <nav className='mx-auto flex items-center py-2 w-full'>
         <Logo />
-        //Search bar
+         {/* Search bar */}
         <form 
            onSubmit={(event) => {
            event.preventDefault();
