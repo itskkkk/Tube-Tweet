@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { axiosInstance } from "../../utils/axiosInstance.js";
 import { toast } from 'react-toastify';
-
+import { parseErrorMessage } from "../../utils/parseErrMsg.js"
 
 
 const initialState = {
@@ -40,7 +40,7 @@ export const logout = createAsyncThunk("auth/logout", async () => {
         await axiosInstance.post("/users/logout")
         toast.success("Logged Out successfully")
     } catch (error) {
-        toast.error(error.response.data)
+        toast.error(parseErrorMessage(error.response.data))
         console.log(error);
         throw error;
     }
@@ -56,7 +56,7 @@ export const changePassword = createAsyncThunk("auth/changePassword" , async(dat
         toast.success(response.data.message);
         return response.data.data;
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
         throw error ;
     }
 });
@@ -71,7 +71,7 @@ export const updateProfile = createAsyncThunk("auth/updateProfile", async(data) 
         toast.success(response.data.message);
         return response.data.data;
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
         throw error;
     }
 });
@@ -86,7 +86,7 @@ export const updateAvatar = createAsyncThunk("user/avatar", async({data}) => {
         toast.success(response.data.message);
         return response.data.data;
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
         console.log(error);
         throw error;
     }
@@ -102,7 +102,7 @@ export const updateCoverImage = createAsyncThunk("user/coverImage", async({data}
         toast.success(response.data.message);
         return response.data.data;
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
         console.log(error);
         throw error;
     }
@@ -113,7 +113,7 @@ export const watchHistory = createAsyncThunk("user/history", async() => {
         const response = await axiosInstance.get(`/users/history`);
         return response.data.data
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
         console.log(error);
         throw error;
     }
@@ -125,7 +125,7 @@ export const clearWatchHistory = createAsyncThunk("user/clearWatchHistory", asyn
         toast.success(response.data.message);
         return response.data.data;
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
         console.log(error);
         throw error;
     }
@@ -136,7 +136,7 @@ export const userPlaylists = createAsyncThunk("user/userPlaylists", async (userI
         const response = await axiosInstance.get(`/playlist/users/${userId}`);
         return response.data.data;
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
         console.log(error);
         throw error;
     }
@@ -148,7 +148,7 @@ export const addLink = createAsyncThunk("user/addLink", async ({ formData }) => 
         toast.success(response.data.message);
         return response.data.data;
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
         console.log(error);
         throw error;
     }
@@ -160,7 +160,7 @@ export const updateLink = createAsyncThunk("user/updateLink", async ({ linkId,fo
         toast.success(response.data.message);
         return response.data.data;
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
         console.log(error);
         throw error;
     }
@@ -172,7 +172,7 @@ export const deleteLink = createAsyncThunk("user/deleteLink", async ({ linkId })
         toast.success(response.data.message);
         return response.data.data;
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
         console.log(error);
         throw error;
     }
