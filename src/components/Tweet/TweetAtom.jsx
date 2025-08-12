@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import {formatTimestamp} from '../../utils/formatFigures.js'
-import toast from 'react-toastify'
+import {toast} from 'react-toastify'
 import { deleteTweet,updateTweet}  from '../../store/slices/tweetSlice.js'
 import { Button,LikesComponent } from '../index.js'
 import { useDispatch } from 'react-redux'

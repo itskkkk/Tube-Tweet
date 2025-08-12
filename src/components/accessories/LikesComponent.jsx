@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import LoginPopup from '../index'
+import LoginPopup from '../Auth/LoginPopup';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import {toggleLike} from '../../store/slices/likeSlice'

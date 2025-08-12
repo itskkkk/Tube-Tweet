@@ -23,7 +23,7 @@ export const createTweet = createAsyncThunk("tweet/createTweet", async({ data })
 
 export const getTweet = createAsyncThunk("tweet/getTweet", async(userId) => {
     try {
-        const response = await axiosInstance.get(`/tweets/users/${userId}`);
+        const response = await axiosInstance.get(`/tweets/user/${userId}`);
         return response.data.data;
     } catch (error) {
         toast.error(parseErrorMessage(error.response.data));
@@ -34,7 +34,7 @@ export const getTweet = createAsyncThunk("tweet/getTweet", async(userId) => {
 
 export const getAllTweets = createAsyncThunk("tweet/getAllTweets", async () => {
     try {
-        const response = await axiosInstance.get(`/tweets`);
+        const response = await axiosInstance.get(`/tweets/user/${userId}`);
         return response.data.data;
     } catch (error) {
         toast.error(parseErrorMessage(error.response.data));
