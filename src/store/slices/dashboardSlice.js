@@ -1,6 +1,5 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import { axiosInstance } from "../../utils/axiosInstance";
-import { data } from "react-router-dom";
 import { toast } from "react-toastify";
 import { parseErrorMessage } from "../../utils/parseErrMsg";
 
