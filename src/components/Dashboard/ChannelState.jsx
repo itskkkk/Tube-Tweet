@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import { StatusAtom, UploadVideo } from "../index";
+import { StatusAtom } from "../index";
+import UploadVideo from "./UploadVideo";
 
 function ChannelState({ channelStates = null }) {
   const uploadRef = useRef();

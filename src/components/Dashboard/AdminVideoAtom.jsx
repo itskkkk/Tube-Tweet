@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import { formatDate } from "../../utils/formatFigures";
 import { Link } from "react-router-dom";
 import { deleteVideo, togglePublish } from "../../store/slices/videoSlice";
-import { ConfirmPopup, UploadVideo } from "../index";
+import { ConfirmPopup } from "../index";
+import UploadVideo from "./UploadVideo";
 import { getChannelVideos } from "../../store/slices/dashboardSlice";
 import { icons } from "../../assets/icons";
 

@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getChannelStats,getChannelVideos } from "../store/slices/dashboardSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { ChannelState,AdminPanelVideos } from "../components";
+import  ChannelState  from "../components/Dashboard/ChannelState";
+import AdminPanelVideos from '../components/Dashboard/AdminPanelVideos';
 
 function Dashboard() {
   const dispatch = useDispatch();
