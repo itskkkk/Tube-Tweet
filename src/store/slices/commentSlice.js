@@ -107,14 +107,14 @@ const commentSlice = createSlice({
         });
 
         //delete comment
-        builder.addCase(getVideoComments.pending, (state) => {
+        builder.addCase(deleteComment.pending, (state) => {
             state.loading = true;
         });
-        builder.addCase(getVideoComments.fulfilled,(state,action) => {
+        builder.addCase(deleteComment.fulfilled,(state,action) => {
             state.loading = false;
             state.status = true;
         });
-        builder.addCase(getVideoComments.rejected,(state) => {
+        builder.addCase(deleteComment.rejected,(state) => {
             state.loading = false;
             state.status = false;
         });
