@@ -9,6 +9,7 @@ function Header() {
   let {userData, status : authStatus } = useSelector(({auth}) => auth);
   const navigate = useNavigate();
   const searchInputRef = useRef();
+  const smallSearchInputRef = useRef();
 
   function handleSearchQuery(input) {
     let searchQuery = input.trim()
@@ -72,7 +73,7 @@ function Header() {
     <header className='sticky inset-x-0 top-0 z-50 w-full border-b border-white bg-[#121212] px-4'>
       <nav className='mx-auto flex items-center py-2 w-full'>
         <Logo />
-         {/* Search bar */}
+        {/* Search bar */}
         <form 
            onSubmit={(event) => {
            event.preventDefault();
@@ -126,6 +127,29 @@ function Header() {
               </svg>
             </div>
           </button>
+        </form>
+
+        {/* for small devices */}
+        <form 
+          onSubmit={(event) => {
+            event.preventDefault();
+            handleSearchQuery(smallSearchInputRef.current.value);
+          }}
+          className='sm:hidden items-start w-full'
+        >
+          <div className='relative w-full max-w-lg overflow-hidden'>
+            <input 
+              ref={smallSearchInputRef}
+              placeholder='Search'
+              className='w-full border rounded-r-2xl focus:border-[#ae7aff] bg-transparent py-1 pl-2 pr-3 placeholder-white outline-none'
+            />
+            <button
+              type='submit'
+              className='absolute right-2 hover:text-[#ae7aff] top-1/2 inline-block -translate-y-1/2'
+            >
+              {icons.search}
+            </button>
+          </div>
         </form>
 
         {/*  Menu Style*/}

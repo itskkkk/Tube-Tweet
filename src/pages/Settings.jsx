@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { updateAvatar, updateCoverImage } from '../store/slices/authSlice';
-import { ChangePassword, EditChannelInfo, EditPersonalInfo } from '../components';
+import { ChangePassword, EditChannelInfo, EditPersonalInfo } from '../components/index';
 
 function Settings() {
     const [currentTab, setCurrentTab] = useState(0);

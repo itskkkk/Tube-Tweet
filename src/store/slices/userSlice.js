@@ -1,6 +1,7 @@
 import { createAsyncThunk,createSlice } from "@reduxjs/toolkit";
 import { axiosInstance } from "../../utils/axiosInstance";
 import { toast } from "react-toastify";
+import { parseErrorMessage } from "../../utils/parseErrMsg";
 
 
 const initialState = {
@@ -36,7 +37,18 @@ export const channelProfile = createAsyncThunk("user/channelprofile", async(user
         const response = await axiosInstance.get(`/users/c/${username}`);
         return response.data.data;
     } catch (error) {
-        toast.error(error.response.data);
+        toast.error(parseErrorMessage(error.response.data));
+        console.log(error);
+    }
+});
+
+
+export const getAboutChannel = createAsyncThunk("user/getAboutChannel", async(username) => {
+    try {
+        const response = await axiosInstance.get(`/about/user/${username}`);
+        return response.data.data;
+    } catch (error) {
+        toast.error(parseErrorMessage(error.response.data));
         console.log(error);
     }
 });
@@ -62,22 +74,15 @@ const userSlice = createSlice({
             state.status = false;
         });
 
-        //get channel profile
-           builder.addCase(channelProfile.pending,(state) => {
+        //get About channel
+           builder.addCase(getAboutChannel.pending,(state) => {
             state.loading = true ;
-            state.status = false ;
-            state.userData = null;
         });
-        builder.addCase(channelProfile.fulfilled, (state, action) => {
-            state.loading = false;
-            state.status = true;
+        builder.addCase(getAboutChannel.fulfilled, (state, action) => {
             state.userData = action.payload;
         });
-        builder.addCase(channelProfile.rejected, (state) => {
-            state.loading = false;
-            state.status = false;
-        });
-    }
+        builder.addCase(getAboutChannel.rejected, (state) => {});
+    },
 });
 
 export default userSlice.reducer;
