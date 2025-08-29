@@ -32,7 +32,7 @@ function Channel({ owner = false }) {
         {/* cover image */}
         <div className='relative min-h-[150px] w-full pt-[16.28%]'>
             <div className='absolute inset-0 overflow-hidden'>
-                <img src={profile?.coverImage} alt={profile?.username} />
+              {profile?.coverImage ? (<img src={profile?.coverImage} alt={profile?.username} />) : null }
             </div>
         </div>
 
@@ -42,7 +42,7 @@ function Channel({ owner = false }) {
             {/* tab list */}
             <ul className='no-scrollbar sticky top-[66px] z-[2] flex flex-row gap-x-2 overflow-auto border-b-2 border-gray-400 bg-[#121212] py-2 sm:top-[82px]'>
                 {tabList?.map((item) => (
-                    <li className='w-full'>
+                    <li key={item.route} className='w-full'>
                         <NavLink
                           to={item.route}
                           end
