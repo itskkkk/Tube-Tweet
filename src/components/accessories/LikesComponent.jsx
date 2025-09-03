@@ -109,8 +109,8 @@ function LikesComponent({
           className={`flex items-center border-r border-gray-700 gap-x-2 
           ${videoId ? " px-4 py-1.5" : "px-2 py-[2px]"}
            after:content-[attr(data-like)] hover:bg-white/10`}
-          data-like={dislike?.totalDisLikes}
-          data-like-alt={dislike?.totalDisLikes + 1}
+          data-like={dislike?.totalDislikes}
+          data-like-alt={dislike?.totalDislikes + 1}
         >
           <span
             className={`inline-block ${videoId ? "w-5" : "w-4"} 

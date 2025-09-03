@@ -94,7 +94,7 @@ function Settings() {
           </div>
           {/* Channel Metadata */}
           <div className="mr-auto inline-block">
-            <h1 className="font-bolg text-xl">{userData?.fullName}</h1>
+            <h1 className="font-bold text-xl">{userData?.fullName}</h1>
             <p className="text-sm text-gray-400">@{userData?.username}</p>
           </div>
           {/* View channel Button */}

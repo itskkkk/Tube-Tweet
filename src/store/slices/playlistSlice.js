@@ -93,7 +93,7 @@ export const updatePlaylist = createAsyncThunk("playlist/updatePlaylist",async (
 
 export const deletePlaylist = createAsyncThunk("playlist/deletePlaylist",async (playlistId) => {
     try {
-        const response = await axiosInstance.patch(`/playlist/${playlistId}`);
+        const response = await axiosInstance.delete(`/playlist/${playlistId}`);
         toast.success(response.data.message);
         return response.data.data;
     } catch (error) {

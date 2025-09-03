@@ -60,7 +60,7 @@ function ConfirmPopup(
                         onSubmit={handleConfirm}
                         className="mx-auto w-full max-w-lg overflow-auto rounded-lg border border-gray-700 text-white bg-[#121212] p-4"
                       >
-                        // close button
+                        {/* close button */}
                         <div className="mb-2 flex items-start justify-end">
                             <button
                               autoFocus

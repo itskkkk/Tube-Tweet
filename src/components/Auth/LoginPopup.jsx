@@ -32,7 +32,7 @@ function LoginPopup({ route, message = "Login to Continue..." }, ref) {
 
     useEffect(() => {
         if(showPopup) {
-            dialog.current.showModel();
+            dialog.current.showModal();
         }
     }, [showPopup]);
 

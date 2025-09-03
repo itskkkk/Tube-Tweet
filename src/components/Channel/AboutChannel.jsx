@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { formatDate } from "../../utils/formatFigures";
 
 const AboutChannel = ({ owner = false }) => {
-  const { username } = useParams;
+  const { username } = useParams();
   const dispatch = useDispatch();
   let channelId = useSelector((state) => state.user.userData?._id);
   let currentUserId = useSelector((state) => state.auth.userData?._id);
