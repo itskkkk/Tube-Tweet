@@ -106,7 +106,7 @@ function Comments({ videoId, ownerAvatar }) {
     );
   return (
     <div className='fixed inset-x-0 top-full z-[60] h-[calc(100%-69px)] overflow-auto rounded-lg border dark:bg-[#121212] bg-[#f2f2f2db] p-4 duration-200 hover:top-[67px] peer-focus:top-[67px] sm:static sm:h-auto sm:max-h-[500px] lg:max-h-none'>
-        <LoginPopup ref={login} message='Sign in to Comment on Video' />
+        <LoginPopup ref={loginPopupDialog} message='Sign in to Comment on Video' />
         {/* add comment */}
         <div className='block'>
             <h6 className='mb-4 font-semibold'>

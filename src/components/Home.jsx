@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
        <div 
-          id='outcome_screen'
+          id='scrollable_results_screen'
           className='h-screen overflow-y-auto dark:bg-[#121212] bg-white dark:text-white text-black' 
        >
            <Header />

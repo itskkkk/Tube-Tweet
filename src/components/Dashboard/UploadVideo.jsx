@@ -101,7 +101,7 @@ function UploadVideo({ video = false }, ref) {
                         </button>
                     </div>
 
-                    // form input
+                    {/* form input */}
                     <div className='mx-auto flex w-full max-w-3xl flex-col gap-y-2 md:gap-y-3 p-4'>
                         {/* video file */}
                         {!video && (
@@ -164,8 +164,8 @@ function UploadVideo({ video = false }, ref) {
                             </>
                         )}
 
-                        // Todo: add thumbnail preview if exist
-                        // thumbnail
+                        {/* Todo: add thumbnail preview if exist */}
+                        {/* thumbnail */}
                         <div className='w-full'>
                             <label htmlFor="thumbnail" className='mb-1 inline-block hover:cursor-pointer'>
                                 Thumbnail
@@ -196,7 +196,7 @@ function UploadVideo({ video = false }, ref) {
                             <div className="text-red-500">*Only .png .jpg and .jpeg files are accepted </div>
                         )}
 
-                        // title
+                        {/* title */}
                         <div className='w-full'>
                             <label htmlFor="title" className='mb-1 inline-block'>
                                 Title
@@ -213,7 +213,7 @@ function UploadVideo({ video = false }, ref) {
                             <div className="text-red-500">*Title is required</div>
                         )}
 
-                        // description
+                        {/* description */}
                         <div className="w-full">
                             <label htmlFor="desc" className="mb-1 inline-block">
                                 Description

@@ -4,6 +4,7 @@ import {toast} from 'react-toastify'
 import { deleteTweet,updateTweet}  from '../../store/slices/tweetSlice.js'
 import { Button,LikesComponent } from '../index.js'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 
 function TweetAtom({ tweet, owner, authStatus}) {

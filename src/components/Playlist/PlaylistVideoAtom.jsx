@@ -23,7 +23,7 @@ function PlaylistVideoAtom({ video, playlistId, owner = false }) {
     <li key={video._id} className='border'>
         <div className='w-full gap-x-4 sm:flex'>
             {/* video thumbnail */}
-            <div className='relative mb-2 w-full sm:mb-0 sm:w-5/2'>
+            <div className='relative mb-2 w-full sm:mb-0 sm:w-5/12'>
               <Link to={`/watch/${video?._id}`}>
                 <div className='w-full pt-[56%]'>
                     <div className='absolute inset-0'>
@@ -38,7 +38,7 @@ function PlaylistVideoAtom({ video, playlistId, owner = false }) {
             {/* video data */}
             <div className='flex relative gap-x-2 px-2 sm:w-7/12 sm:px-0'>
               <div className='h-10 w-10 shrink-0 sm:hidden'>
-                <img src={video.owner} alt={video.owner?.fullName} className='h-full w-full rounded-full' />
+                <img src={video.owner?.avatar} alt={video.owner?.fullName} className='h-full w-full rounded-full' />
               </div>
               {/* video details */}
               <div className='w-full mt-2'>
