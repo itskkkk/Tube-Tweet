@@ -41,7 +41,7 @@ const paginationSlice = createSlice({
     initialState,
     reducers: {
         emptyPagingVideosData: (state, action) => {
-            state.data = { videos: [], pagingInfo: {} };
+            state.data = { videos: [], pagination: {} };
         },
     },
     extraReducers: (builder) => {
@@ -51,9 +51,9 @@ const paginationSlice = createSlice({
         });
         builder.addCase(getAllVideosByOption.fulfilled, (state, action) => {
             state.loading = false;
-            const { videos, pagingInfo } = action.payload;
-            state.data.videos = action.meta.arg.page == 1 ? videos : [...state.data.videos, ...videos];
-            state.data.pagingInfo = pagingInfo;
+            const { videos, pagination } = action.payload;
+            state.data.videos = action.meta.arg.page === 1 ? videos : [...state.data.videos, ...videos];
+            state.data.pagination = pagination;
             state.status = true;  
         });
         builder.addCase(getAllVideosByOption.rejected, (state) => {

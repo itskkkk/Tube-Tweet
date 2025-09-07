@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
-import { StatusAtom } from "../index";
-import UploadVideo from "./UploadVideo";
+import { StatusAtom, UploadVideo } from "../index";
 
 function ChannelState({ channelStates = null }) {
   const uploadRef = useRef();
 
   // Skeleton Effect for loading
-  if (!ChannelState) {
+  if (!channelStates) {
     return (
       <>
         <div className="flex flex-wrap justify-between gap-4">

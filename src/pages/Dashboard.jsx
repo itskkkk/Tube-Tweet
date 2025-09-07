@@ -15,7 +15,7 @@ function Dashboard() {
   }, []);
 
   // Skeleton Effect for loading
-  if (!channelStates && !channelVideos)
+  if (!channelStates || !channelVideos)
     return (
       <h1 className="size-full text-center">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-y-6 px-4 py-8">

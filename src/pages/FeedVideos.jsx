@@ -8,13 +8,13 @@ function FeedVideos() {
 
     const { loading } = useSelector(({ pagingVideos }) => pagingVideos);
     const { videos } = useSelector(({ pagingVideos }) => pagingVideos.data);
-    const { pagingInfo } = useSelector(({ pagingVideos }) => pagingVideos.data);
+    const { pagination } = useSelector(({ pagingVideos }) => pagingVideos.data);
 
     const sectionRef = useRef();
     const fetchedPageRef = useRef();
-    const pagingInfoRef = useRef(pagingInfo);
+    const pagingInfoRef = useRef(pagination);
 
-    pagingInfoRef.current = pagingInfo;
+    pagingInfoRef.current = pagination;
 
     useEffect(() => {
         fetchedPageRef.current = new Set();

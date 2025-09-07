@@ -43,7 +43,7 @@ const dashboardSlice = createSlice({
         });
         builder.addCase(getChannelStats.fulfilled, (state, action) => {
             state.loading = false;
-            state.data.channelStats = action.payload;
+            state.data.channelStates = action.payload;
             state.status = true;
         });
         builder.addCase(getChannelStats.rejected, (state) => {
