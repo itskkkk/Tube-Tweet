@@ -45,7 +45,7 @@ export const channelProfile = createAsyncThunk("user/channelprofile", async(user
 
 export const getAboutChannel = createAsyncThunk("user/getAboutChannel", async(username) => {
     try {
-        const response = await axiosInstance.get(`/about/user/${username}`);
+        const response = await axiosInstance.get(`/users/about/${username}`);
         return response.data.data;
     } catch (error) {
         toast.error(parseErrorMessage(error.response.data));
@@ -74,12 +74,28 @@ const userSlice = createSlice({
             state.status = false;
         });
 
+        // get channel profile
+        builder.addCase(channelProfile.pending,(state) => {
+            state.loading = true ;
+            state.status = false ;
+            state.userData = null;
+        });
+        builder.addCase(channelProfile.fulfilled, (state, action) => {
+            state.loading = false;
+            state.status = true;
+            state.userData = action.payload;
+        });
+        builder.addCase(channelProfile.rejected, (state) => {
+            state.loading = false;
+            state.status = false;
+        });
+
         //get About channel
-           builder.addCase(getAboutChannel.pending,(state) => {
+        builder.addCase(getAboutChannel.pending,(state) => {
             state.loading = true ;
         });
         builder.addCase(getAboutChannel.fulfilled, (state, action) => {
-            state.userData = action.payload;
+            state.userData.about = action.payload;
         });
         builder.addCase(getAboutChannel.rejected, (state) => {});
     },

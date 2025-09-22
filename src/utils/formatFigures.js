@@ -35,8 +35,16 @@ export function formatVideoDuration(duration) {
 
 
 export function formatDate(timestamp) {
+    if(!timestamp) {
+        return "Unknown"
+    }
+
     const date = new Date(timestamp);
-    const days = date.getDay() + 1;
+
+    if(isNaN(date.getTime())){
+        return "Invalid Date"
+    }
+    const days = date.getDate();
     const months = date.getMonth() + 1;
 
     const day = days < 10 ? "0" + days : days ;

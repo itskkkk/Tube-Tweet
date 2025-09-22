@@ -30,26 +30,26 @@ const AboutChannel = ({ owner = false }) => {
         {/* Channel Details */}
         <div className="mb-6">
           <div className=" w-40 h-9 mb-3 bg-slate-100/10 animate-pulse rounded-lg"></div>
-          <p className="ml-1 mb-[6px] flex">
+          <div className="ml-1 mb-[6px] flex">
             <div className="font-bold inline-block h-6 w-6 mr-2 bg-slate-100/10 animate-pulse rounded-full"></div>
             <div className=" w-48 h-6 bg-slate-100/10 animate-pulse rounded-lg"></div>
-          </p>
-          <p className="ml-1 mb-[6px] flex">
+          </div>
+          <div className="ml-1 mb-[6px] flex">
             <div className="font-bold inline-block h-6 w-6 mr-2 bg-slate-100/10 animate-pulse rounded-full"></div>
             <div className=" w-48 h-6 bg-slate-100/10 animate-pulse rounded-lg"></div>
-          </p>
-          <p className="ml-1 mb-[6px] flex">
+          </div>
+          <div className="ml-1 mb-[6px] flex">
             <div className="font-bold inline-block h-6 w-6 mr-2 bg-slate-100/10 animate-pulse rounded-full"></div>
             <div className=" w-48 h-6 bg-slate-100/10 animate-pulse rounded-lg"></div>
-          </p>
-          <p className="ml-1 mb-[6px] flex">
+          </div>
+          <div className="ml-1 mb-[6px] flex">
             <div className="font-bold inline-block h-6 w-6 mr-2 bg-slate-100/10 animate-pulse rounded-full"></div>
             <div className=" w-48 h-6 bg-slate-100/10 animate-pulse rounded-lg"></div>
-          </p>
-          <p className="ml-1 mb-[6px] flex">
+          </div>
+          <div className="ml-1 mb-[6px] flex">
             <div className="font-bold inline-block h-6 w-6 mr-2 bg-slate-100/10 animate-pulse rounded-full"></div>
             <div className=" w-48 h-6 bg-slate-100/10 animate-pulse rounded-lg"></div>
-          </p>
+          </div>
         </div>
       </div>
     );
