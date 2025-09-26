@@ -21,14 +21,17 @@ function ChannelTweets({ owner = false }) {
   const { register, handleSubmit, reset, setFocus } = useForm();
 
   useEffect(() => {
-    if (owner) {
-      userId = currentUser?._id;
-    }
-    if (!userId) return;
-    dispatch(getTweet(userId)).then((res) => {
+    // if (owner) {
+    //   userId = currentUser?._id;
+    // }
+    // if (!userId) return;
+    const targetUserId = owner ? currentUser?._id : userId;
+    if(!targetUserId) return;
+
+    dispatch(getTweet(targetUserId)).then((res) => {
       if (res.meta.requestStatus == "fulfilled") setLocalTweets(res.payload);
     });
-  }, [username, userId, authStatus]);
+  }, [username, userId, authStatus, owner, currentUser?._id]);
 
   function addTweet(data) {
     if (!data.tweet.trim()) {
@@ -44,8 +47,11 @@ function ChannelTweets({ owner = false }) {
       setFocus("tweet");
       return;
     }
-    dispatch(createTweet({ data })).then(() => {
-      getTweet(currentUser?._id);
+    dispatch(createTweet({ data })).then((res) => {
+      if(res.meta.requestStatus === "fulfilled") {
+        setLocalTweets(prev => [res.payload, ...(prev || [])]);
+      }
+      //getTweet(currentUser?._id);
       reset();
     });
   }
@@ -76,9 +82,9 @@ function ChannelTweets({ owner = false }) {
                   <span className="bg-slate-100/10 rounded animate-pulse w-16 h-6"></span>
                 </div>
                 <div className="bg-slate-100/10 rounded animate-pulse w-32 mt-1 h-4"></div>
-                <p className="my-1 text-[14px]">
+                <div className="my-1 text-[14px]">
                   <div className="text-transparent h-6 bg-slate-100/10 rounded animate-pulse w-[50%] outline-none border-b-[1px] border-transparent"></div>
-                </p>
+                </div>
               </div>
             </span>
           </div>
@@ -99,9 +105,9 @@ function ChannelTweets({ owner = false }) {
                   <span className="bg-slate-100/10 rounded animate-pulse w-16 h-6"></span>
                 </div>
                 <div className="bg-slate-100/10 rounded animate-pulse w-32 mt-1 h-4"></div>
-                <p className="my-1 text-[14px]">
+                <div className="my-1 text-[14px]">
                   <div className="text-transparent h-6 bg-slate-100/10 rounded animate-pulse w-[50%] outline-none border-b-[1px] border-transparent"></div>
-                </p>
+                </div>
               </div>
             </span>
           </div>
@@ -122,9 +128,9 @@ function ChannelTweets({ owner = false }) {
                   <span className="bg-slate-100/10 rounded animate-pulse w-16 h-6"></span>
                 </div>
                 <div className="bg-slate-100/10 rounded animate-pulse w-32 mt-1 h-4"></div>
-                <p className="my-1 text-[14px]">
+                <div className="my-1 text-[14px]">
                   <div className="text-transparent h-6 bg-slate-100/10 rounded animate-pulse w-[50%] outline-none border-b-[1px] border-transparent"></div>
-                </p>
+                </div>
               </div>
             </span>
           </div>
@@ -145,9 +151,9 @@ function ChannelTweets({ owner = false }) {
                   <span className="bg-slate-100/10 rounded animate-pulse w-16 h-6"></span>
                 </div>
                 <div className="bg-slate-100/10 rounded animate-pulse w-32 mt-1 h-4"></div>
-                <p className="my-1 text-[14px]">
+                <div className="my-1 text-[14px]">
                   <div className="text-transparent h-6 bg-slate-100/10 rounded animate-pulse w-[50%] outline-none border-b-[1px] border-transparent"></div>
-                </p>
+                </div>
               </div>
             </span>
           </div>
@@ -168,9 +174,9 @@ function ChannelTweets({ owner = false }) {
                   <span className="bg-slate-100/10 rounded animate-pulse w-16 h-6"></span>
                 </div>
                 <div className="bg-slate-100/10 rounded animate-pulse w-32 mt-1 h-4"></div>
-                <p className="my-1 text-[14px]">
+                <div className="my-1 text-[14px]">
                   <div className="text-transparent h-6 bg-slate-100/10 rounded animate-pulse w-[50%] outline-none border-b-[1px] border-transparent"></div>
-                </p>
+                </div>
               </div>
             </span>
           </div>
@@ -191,9 +197,9 @@ function ChannelTweets({ owner = false }) {
                   <span className="bg-slate-100/10 rounded animate-pulse w-16 h-6"></span>
                 </div>
                 <div className="bg-slate-100/10 rounded animate-pulse w-32 mt-1 h-4"></div>
-                <p className="my-1 text-[14px]">
+                <div className="my-1 text-[14px]">
                   <div className="text-transparent h-6 bg-slate-100/10 rounded animate-pulse w-[50%] outline-none border-b-[1px] border-transparent"></div>
-                </p>
+                </div>
               </div>
             </span>
           </div>
@@ -214,9 +220,9 @@ function ChannelTweets({ owner = false }) {
                   <span className="bg-slate-100/10 rounded animate-pulse w-16 h-6"></span>
                 </div>
                 <div className="bg-slate-100/10 rounded animate-pulse w-32 mt-1 h-4"></div>
-                <p className="my-1 text-[14px]">
+                <div className="my-1 text-[14px]">
                   <div className="text-transparent h-6 bg-slate-100/10 rounded animate-pulse w-[50%] outline-none border-b-[1px] border-transparent"></div>
-                </p>
+                </div>
               </div>
             </span>
           </div>
@@ -237,9 +243,9 @@ function ChannelTweets({ owner = false }) {
                   <span className="bg-slate-100/10 rounded animate-pulse w-16 h-6"></span>
                 </div>
                 <div className="bg-slate-100/10 rounded animate-pulse w-32 mt-1 h-4"></div>
-                <p className="my-1 text-[14px]">
+                <div className="my-1 text-[14px]">
                   <div className="text-transparent h-6 bg-slate-100/10 rounded animate-pulse w-[50%] outline-none border-b-[1px] border-transparent"></div>
-                </p>
+                </div>
               </div>
             </span>
           </div>

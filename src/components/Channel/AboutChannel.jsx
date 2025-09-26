@@ -7,14 +7,19 @@ import { formatDate } from "../../utils/formatFigures";
 const AboutChannel = ({ owner = false }) => {
   const { username } = useParams();
   const dispatch = useDispatch();
-  let channelId = useSelector((state) => state.user.userData?._id);
-  let currentUserId = useSelector((state) => state.auth.userData?._id);
-  const aboutChannel = useSelector(({ user }) => user.userData?.about);
+  // let channelId = useSelector((state) => state.user.userData?._id);
+  // let currentUserId = useSelector((state) => state.auth.userData?._id);
+  const aboutChannel = useSelector((state) => state.user.userData?.about);
+
+  // console.log("username from params:", username);
+  // console.log("aboutChannel data:", aboutChannel);
+  // console.log("full userData:", useSelector((state) => state.user.userData));
 
   useEffect(() => {
-    if (owner) channelId = currentUserId;
-    dispatch(getAboutChannel(channelId));
-  }, [username]);
+    if(username) {
+      dispatch(getAboutChannel(username))
+    }
+  }, [username, dispatch]);
 
   if (!aboutChannel) {
     return (
