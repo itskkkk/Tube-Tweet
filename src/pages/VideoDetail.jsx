@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import videojs from "video.js";
 import { emptyVideosState, getVideo, updateView } from "../store/slices/videoSlice";
 import { Comments, LikesComponent, LoginPopup, VideoPlayer, UserProfile } from "../components/index";
 import { formatTimestamp } from "../utils/formatFigures";
@@ -288,11 +289,11 @@ function VideoDetail() {
 
     // You can handle player events here, for example:
     player.on("waiting", () => {
-      videojs.log("player is waiting");
+      //videojs.log("player is waiting");
     });
 
     player.on("dispose", () => {
-      videojs.log("player will dispose");
+      //videojs.log("player will dispose");
     });
   };
 

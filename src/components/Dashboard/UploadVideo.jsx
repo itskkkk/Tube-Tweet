@@ -46,7 +46,7 @@ function UploadVideo({ video = false }, ref) {
     }, [showPopup]);
 
     async function handleVideo(data) {
-        console.log("data: ",data);
+        //console.log("data: ",data);
         
         let uploadPromise;
         if(video) {

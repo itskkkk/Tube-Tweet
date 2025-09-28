@@ -170,8 +170,8 @@ function VideoView({ videos = [], loading = true, fetching = false }) {
                         <p className="text-sm text-gray-200">{video.owner?.fullName}</p>
                       </div>
                       <p className="mt-2 hidden text-sm md:block">
-                        {video.description.substr(0, 170) +
-                          (video.description.length > 170 ? "..." : "")}
+                        {video.description?.substring(0, 170) +
+                          ((video.description?.length || 0) > 170 ? "..." : "")}
                       </p>
                     </div>
                   </div>

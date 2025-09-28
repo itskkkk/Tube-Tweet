@@ -15,7 +15,7 @@ function ChannelSubScribed({ owner = false, isSubscribers = false }) {
 
     useEffect(() => {
         if (isSubscribers) {
-            console.log("isSubscribers:", isSubscribers);
+            //console.log("isSubscribers:", isSubscribers);
             dispatch(getChannelSubscribers(currentUser?._id));
             return;
         }
