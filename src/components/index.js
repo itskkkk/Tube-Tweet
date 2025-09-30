@@ -30,7 +30,6 @@ import AdminPanelVideos from './Dashboard/AdminPanelVideos.jsx'
 import GuestHistory from './GuestPages/GuestHistory.jsx'
 import VideoPlayer from './accessories/VideoPlayer.jsx'
 import UserProfile from './accessories/UserProfile.jsx'
-import CommentLike from './Comment/CommentLike.jsx'
 import CommentAtom from './Comment/CommentAtom.jsx'
 import Comments from './Comment/Comments.jsx'
 import ChannelProfileAtom from './accessories/ChannelProfileAtom.jsx'
@@ -94,7 +93,6 @@ export {
     AdminPanelVideos,
     ChannelState,
     ChannelProfileAtom,
-    CommentLike,
     CommentAtom,
     Comments,
     EmptyChannelVideo,
