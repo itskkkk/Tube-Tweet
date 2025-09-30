@@ -56,7 +56,7 @@ function Comments({ videoId, ownerAvatar }) {
                     <span className='flex w-full gap-x-4'>
                         {/* avatar */}
                         <div className='mt-2 h-12 w-12 shrink-0'>
-                            <div className='h-full w-full rounde-full border-white dark:bg-slate-100/10 bg-zinc-300 animate-pulse'></div>
+                            <div className='h-full w-full rounded-full border-white dark:bg-slate-100/10 bg-zinc-300 animate-pulse'></div>
                         </div>
                         {/* content */}
                         <div className='block w-full'>
@@ -65,9 +65,9 @@ function Comments({ videoId, ownerAvatar }) {
                                 <span className='dark:bg-slate-100/10 bg-zinc-300 rounded animate-pulse w-16 h-4'></span>
                             </div>
                             <div className='dark:bg-slate-100/10 rounded animate-pulse w-32 mt-1 h-4'></div>
-                            <p className='my-1 text-[14px]'>
+                            <div className='my-1 text-[14px]'>
                                 <div className='text-transparent h-5 dark:bg-slate-100/10 bg-zinc-300 rounded animate-pulse w-[70%] outline-none border-b-[1px] border-transparent'></div>
-                            </p>
+                            </div>
                         </div>
                     </span>
                 </div>
@@ -77,7 +77,7 @@ function Comments({ videoId, ownerAvatar }) {
                     <span className='flex w-full gap-x-4'>
                         {/* avatar */}
                         <div className='mt-2 h-12 w-12 shrink-0'>
-                            <div className='h-full w-full rounde-full border-white dark:bg-slate-100/10 bg-zinc-300 animate-pulse'></div>
+                            <div className='h-full w-full rounded-full border-white dark:bg-slate-100/10 bg-zinc-300 animate-pulse'></div>
                         </div>
                         {/* content */}
                         <div className='block w-full'>
@@ -86,9 +86,9 @@ function Comments({ videoId, ownerAvatar }) {
                                 <span className='dark:bg-slate-100/10 bg-zinc-300 rounded animate-pulse w-16 h-4'></span>
                             </div>
                             <div className='dark:bg-slate-100/10 rounded animate-pulse w-32 mt-1 h-4'></div>
-                            <p className='my-1 text-[14px]'>
+                            <div className='my-1 text-[14px]'>
                                 <div className='text-transparent h-5 dark:bg-slate-100/10 bg-zinc-300 rounded animate-pulse w-[70%] outline-none border-b-[1px] border-transparent'></div>
-                            </p>
+                            </div>
                         </div>
                     </span>
                 </div>

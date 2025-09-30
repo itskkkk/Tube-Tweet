@@ -2,6 +2,6 @@ import axios from 'axios';
 
 
 export const axiosInstance = axios.create({
-    baseURL : "http://localhost:8000/api/v1",
+    baseURL : "https://backend-project-t25d.onrender.com",
     withCredentials : true,
 })

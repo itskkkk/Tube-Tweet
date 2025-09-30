@@ -15,7 +15,13 @@ function Settings() {
       {/* CoverImage */}
       <div className="relative min-h-[150px] w-full pt-[16.28%]">
         <div className="absolute inset-0 overflow-hidden">
-          <img src={userData?.coverImage} alt="cover-photo" />
+          {userData?.coverImage ? (
+            <img src={userData.coverImage} alt="cover-photo" />
+          ) : (
+            <div className='h-full w-full bg-gray-800 flex items-center justify-center'>
+              <span className='text-gray-400'>No cover image</span>
+            </div>
+          )}
         </div>
         {/* coverImage Upload */}
         <form
