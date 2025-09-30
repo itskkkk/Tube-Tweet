@@ -95,10 +95,14 @@ const userSlice = createSlice({
             state.loading = true ;
         });
         builder.addCase(getAboutChannel.fulfilled, (state, action) => {
+            state.loading = false;
+            if(!state.userData) {
+                state.userData = {};
+            }
             state.userData.about = action.payload;
         });
         builder.addCase(getAboutChannel.rejected, (state) => {});
     },
 });
 
-export default userSlice.reducer;
+export default userSlice.reducer

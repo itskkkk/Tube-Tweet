@@ -17,11 +17,11 @@ export const getLikedVideos = createAsyncThunk("like/getLikedVideos", async () =
         return response.data.data;
     } catch (error) {
         toast.error(parseErrorMessage(error.response.data));
-        console.log(error);
+        //console.log(error);
     }
 });
 
-export const toggleLike = createAsyncThunk("like/toggleLike", async () => {
+export const toggleLike = createAsyncThunk("like/toggleLike", async ({ qs, toggleLike }) => {
     try {
         const response = await axiosInstance.patch(`/like?toggleLike=${toggleLike}&${qs}`);
         return response.data.data;
@@ -34,7 +34,7 @@ export const toggleLike = createAsyncThunk("like/toggleLike", async () => {
 
 export const toggleCommentLike = createAsyncThunk("like/toggleCommentLike", async ({ commentId, toggleLike }) => {
     try {
-        const response = await axiosInstance.patch(`/like/comment/${commentId}?toggleLike=${toggleLike}`);
+        const response = await axiosInstance.post(`/like/toggle/c/${commentId}?toggleLike=${toggleLike}`);
         return response.data.data;
     } catch (error) {
         toast.error(parseErrorMessage(error.response.data));
@@ -45,7 +45,7 @@ export const toggleCommentLike = createAsyncThunk("like/toggleCommentLike", asyn
 
 export const toggleTweetLike = createAsyncThunk("like/toggleTweetLike", async (tweetId) => {
     try {
-        const response = await axiosInstance.patch(`/like/tweet/${tweetId}`);
+        const response = await axiosInstance.post(`/like/toggle/t/${tweetId}`);
         return response.data.data;
     } catch (error) {
         toast.error(parseErrorMessage(error.response.data));
@@ -56,7 +56,7 @@ export const toggleTweetLike = createAsyncThunk("like/toggleTweetLike", async (t
 
 export const toggleVideoLike = createAsyncThunk("like/toggleVideoLike", async (videoId) => {
     try {
-        const response = await axiosInstance.patch(`/like/video/${videoId}`);
+        const response = await axiosInstance.post(`/like/toggle/v/${videoId}`);
         return response.data.data;
     } catch (error) {
         toast.error(parseErrorMessage(error.response.data));

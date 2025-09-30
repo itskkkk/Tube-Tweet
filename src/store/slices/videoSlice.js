@@ -135,9 +135,9 @@ const videoSlice = createSlice({
     initialState,
     reducers: {
         emptyVideosState: (state, action) => {
-            console.log("state.data:", state.data);
+            //console.log("state.data:", state.data);
             state.data = null;
-            console.log("state.data:", state.data);
+            //console.log("state.data:", state.data);
         },
     },
     extraReducers: (builder) => {
