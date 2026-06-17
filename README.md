@@ -5,6 +5,9 @@
 *Tube-Tweet is a project designed that have functionality of a video hosting platform similar to Youtube and micro-blogging feature similar to twitter.This project is built using Node.js,Express.js,React.js,MongoDB and incorporates various other technologies to ensure a robust system.The project aims to provide a complete features for a video hosting website,featuring essential functionalities such as user authentication, video uploading, liking/disliking, commenting, subscribing/unsubscribing,admin panel,watch history, liked videos etc.it includes features that utilizing standard practices such as JWT,bcrypt,access tokens and refresh tokens for security.Find more about this project in the documentation below.*
 
 Link :- (https://tube-tweet-kohl.vercel.app/)
+## 📸 Preview
+
+![Tube-Tweet Screenshot](https://raw.githubusercontent.com/itskkkk/Tube-Tweet/main/screenshot.png)
 
 **Features**
 
